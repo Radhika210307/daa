@@ -375,3 +375,78 @@ wt = [10, 20, 30]
 W = 50
 print("Max value:", knapsack(W, wt, val, len(val)))
 ```
+
+
+ ques 13 Write a program to sort the elements of an array using Quick Sort (The program should report the number of comparisons).
+```
+def quick_sort(arr):
+    comparisons = 0
+
+    def partition(low, high):
+        nonlocal comparisons
+        pivot = arr[high]
+        i = low - 1
+
+        for j in range(low, high):
+            comparisons += 1
+            if arr[j] < pivot:
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]
+
+        arr[i + 1], arr[high] = arr[high], arr[i + 1]
+        return i + 1
+
+    def quicksort(low, high):
+        if low < high:
+            pi = partition(low, high)
+
+            quicksort(low, pi - 1)
+            quicksort(pi + 1, high)
+
+    quicksort(0, len(arr) - 1)
+    return arr, comparisons
+
+
+# Input from user
+arr = list(map(int, input("Enter elements: ").split()))
+
+sorted_arr, comp = quick_sort(arr)
+
+print("Sorted array:", sorted_arr)
+print("Number of comparisons:", comp)
+```
+ques 14Write a program to sort the elements of an array using Count Sort.
+
+```
+def count_sort(arr):
+    # Find maximum element
+    max_element = max(arr)
+
+    # Create count array
+    count = [0] * (max_element + 1)
+
+    # Store frequency of each element
+    for num in arr:
+        count[num] += 1
+
+    # Build sorted array
+    sorted_arr = []
+
+    for i in range(len(count)):
+        while count[i] > 0:
+            sorted_arr.append(i)
+            count[i] -= 1
+
+    return sorted_arr
+
+
+# Input from user
+arr = list(map(int, input("Enter elements: ").split()))
+
+# Perform Count Sort
+sorted_arr = count_sort(arr)
+
+# Display result
+print("Sorted array:", sorted_arr)
+
+```
