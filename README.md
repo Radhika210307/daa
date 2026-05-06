@@ -318,6 +318,20 @@ def dijkstra(graph, start):
                 heapq.heappush(pq, (dist[neighbor], neighbor))
 
     return dist
+graph = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('A', 1), ('C', 2), ('D', 5)],
+    'C': [('A', 4), ('B', 2), ('D', 1)],
+    'D': [('B', 5), ('C', 1)]
+}
+
+start = 'A'
+
+distances = dijkstra(graph, start)
+
+print("Shortest distances:")
+for node in distances:
+    print(node, ":", distances[node])
 ```
 
 ✅ 11. Weighted Interval Scheduling (Greedy)
