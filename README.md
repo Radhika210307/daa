@@ -147,6 +147,19 @@ def strassen(A, B):
         result.append(C21[i] + C22[i])
 
     return result
+n = int(input("Enter size (power of 2): "))
+
+print("Enter Matrix A:")
+A = [list(map(int, input().split())) for _ in range(n)]
+
+print("Enter Matrix B:")
+B = [list(map(int, input().split())) for _ in range(n)]
+
+result = strassen(A, B)
+
+print("Result Matrix:")
+for row in result:
+    print(row)
 ```
 
 ✅ 5. Radix Sort
