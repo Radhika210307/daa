@@ -1,5 +1,6 @@
 # daa
 practical 1 Write a program to sort the elements of an array using Insertion Sort and count the number of comparisons.
+✅ 1. Insertion Sort
 ```
 def insertion_sort(arr):
     comp = 0
@@ -22,8 +23,9 @@ print("Sorted:", sorted_arr)
 print("Comparisons:", comp)
 ```
 practical 2
+✅ 2. Merge Sort
 Write a program to sort an array using Merge Sort and count comparisons.
-
+ 
 ```
 def merge_sort(arr):
     if len(arr) <= 1:
