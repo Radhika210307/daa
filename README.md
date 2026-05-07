@@ -21,7 +21,7 @@ arr = list(map(int, input("Enter elements: ").split()))
 sorted_arr, comp = insertion_sort(arr)
 print("Sorted:", sorted_arr)
 print("Comparisons:", comp)
-
+```
 ```
 #cpp
 #include <iostream>
